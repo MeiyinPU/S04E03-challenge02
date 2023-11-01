@@ -1,6 +1,18 @@
 <%- include('partials/header.ejs') %>
 
+<h1><%= promo.name %></h1>
 
+<h1>Liste des étudiants</h1>
+
+<ul class="cards">
+
+  <% studentList.forEach(student => { %>
+   
+  <li><a href="/student/<%= student.id %>"><%= student.first_name %><%= student.last_name %></a>
+  </li>
+  <% }) %>
+
+</ul>
 
 
 

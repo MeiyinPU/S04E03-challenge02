@@ -1,9 +1,10 @@
 <%- include('partials/header.ejs') %>
 
+<h1>Trombin'O'Clock</h1>
 
-
-
-
+    <% if (locals.userName) { %>
+        <h2>Bienvenue <%= userName %></h2>
+    <% } %>
 
 
 <%- include('partials/footer.ejs') %>

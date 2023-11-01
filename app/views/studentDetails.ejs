@@ -1,9 +1,25 @@
 <%- include('partials/header.ejs') %>
 
 
+<div class="student">
+<div class="student-avatar">
+<img src="<%= student.profile_picture%>">
+</div>
+
+<div class="student-description">
+
+<h1><%= student.first_name %> <%= student.last_name %></h1>
+
+<p>promo:
+
+<a href="/promos/<%= student.promo_id %>"><em><%= student.promo_name %></em></a>
+</p>
+
+<p>Pseudo Github:
+<em><%= student.github_username %></em></p>
 
 
-
-
+</div>
+</div>
 
 <%- include('partials/footer.ejs') %>

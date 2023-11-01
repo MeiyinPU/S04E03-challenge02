@@ -27,10 +27,10 @@ app.use(express.static(__dirname + "/public"));
 // branche le MW express-session 
 
 // MW custom àpres "session" et avant "router"
-// app.use((req, res, next)=>{
-// res.locals.userName = req.session.
-// next();
-// })
+app.use((req, res, next)=>{
+  res.locals.userName = req.session.connectedUser,
+  next();
+});
 
 // router
 app.use(router);
