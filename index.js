@@ -8,7 +8,7 @@ const express = require("express");
 // reuquire le module express-session
 
 // require router
-// const router = require(".app/router.js");
+const router = require("./app/router.js");
 
 // execution d'express
 const app = express();
@@ -33,15 +33,15 @@ app.use(express.static(__dirname + "./public"));
 // })
 
 // router
-// app.use(router);
+app.use(router);
 
 
 // test
-app.get("/", (req, res)=>{
-  res.write("hello world");
-  res.end();
-}
-);
+// app.get("/", (req, res)=>{
+//   res.write("hello world");
+//   res.end();
+// }
+// );
 
 app.use((req, res) => {
   res.status(404).render('404');

@@ -1,8 +1,16 @@
 <%- include('partials/header.ejs') %>
 
+<h1>Liste des promotions</h1>
 
+<ul class="cards">
 
+  <% promoList.forEach(promo => { %>
+   
+  <li><a href="/promos/ <%= promo.id %>"> <%= promo.name %></a>
+  </li>
+  <% }) %>
 
+</ul>
 
 
 
