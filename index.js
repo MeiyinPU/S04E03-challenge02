@@ -15,10 +15,11 @@ const app = express();
 
 // config views
 app.set('view engine', 'ejs');
-app.set('views', './app/views');
+app.set('views', __dirname +'/app/views');
+
 
 // config fichier statiques
-app.use(express.static("./public"));
+app.use(express.static(__dirname + "./public"));
 
 //accès à request.body dans les controllers
 
@@ -48,8 +49,8 @@ app.use((req, res) => {
 
 // port à écouter
 const PORT = process.env.PORT || 8080;
-// const HOST = process.env.HOST;
+const HOST = process.env.HOST;
 
 app.listen(PORT, ()=>{
-  console.log(`App running at http://lcoalhost:${PORT}`);
+  console.log(`App running at http://${HOST}:${PORT}`);
 });
