@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- on lie notre fichier css, en indiquant le chemin depuis de le dossier "public" que l'on a configuré comme dossier contenant les fichiers statiques dans index.js -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__logo">Trombi</div>
+
+        <nav class="header__nav">
+            <ul>
+                <li><a class="button button--menu" href="/">Accueil</a></li>
+                <li><a class="button button--menu" href="/promos">Promos</a></li>
+                <% if (locals.userName && locals.userName === "Nicole") { %>
+                    <li><a class="button button--menu" href="/admin/addStudent">Ajouter un étudiant</a></li>
+                <% } %>
+                <li><a class="button button--menu" href="/login">Login</a></li>
+
+                <% if (locals.userName) { %>
+                    <li><%= locals.userName %></li>
+                <% } %>
+            </ul>
+        </nav>
+
+    </header>

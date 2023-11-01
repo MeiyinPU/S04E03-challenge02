@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  margin-top: 114px;
+  margin-bottom: 70px;
+  padding: 30px;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1 {
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: antiquewhite;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0
+}
+
+.header__logo {
+  color: #ff5e00;
+  font-weight: bold;
+  font-size: 2em;
+  background-color: #ffcf57;
+  padding: 10px;
+  box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.header__nav ul {
+  display: flex;
+}
+
+.header__nav ul li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.button {
+  text-decoration: none;
+  color: #ff7818;
+}
+
+.footer {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(76 76 76);
+  color: white;
+  position: fixed; 
+  bottom: 0; 
+  left: 0; 
+  right: 0
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+  text-align: center;
+}
+
+.cards a {
+  display: block;
+  text-decoration: none;
+}
+
+.cards li {
+  width: 23%;
+  padding: 0.5em;
+}
+
+.cards .card a {
+  background-color: #2eccb2;
+  color: #FEFFD4;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.cards .card a:hover {
+  background-color: #1e9c88;
+}
+
+.cards .card figure {
+  margin: 0;
+}
+
+.cards .card figcaption {
+  margin-top: 0.5em;
+}
+
+.cards .card img {
+  border-radius: 0.3em;
+  width: 50px;
+  height: 50px;
+  background: white;
+}
+
+/* STUDENT */
+
+.student {
+  display: flex;
+}
+
+.student .student-avatar img {
+  width: 100%;
+}
+
+.student .student-description {
+  width: 100%;
+  padding: 0px 50px;
+}
+
+.student em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* FORMULAIRE */
+form {
+  width: 100%;
+  max-width: 410px;
+  margin: 2em auto 0;
+}
+
+.form-group {
+  padding-bottom: 15px;
+  text-align: right;
+}
+
+form input, form select {
+  border: solid 1px #ccc;
+  outline-color: #ccc;
+  background: white;
+  border-radius: 5px;
+  padding: 0.5em;
+  width: 20em;
+}
+.error {
+  font-weight: bold;
+  color: red;
+}
+
