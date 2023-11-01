@@ -19,7 +19,7 @@ app.set('views', __dirname +'/app/views');
 
 
 // config fichier statiques
-app.use(express.static(__dirname + "./public"));
+app.use(express.static(__dirname + "/public"));
 
 //accès à request.body dans les controllers
 

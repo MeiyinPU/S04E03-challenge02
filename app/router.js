@@ -10,7 +10,17 @@ const promoController = require("./controllers/promoController.js");
 //   res.end();
 // });
 
-
+// Liste des promos
 router.get("/promos", promoController.getPromoList);
+
+
+// détails d'une promo
+router.get("/promos/:id", promoController.getPromo);
+
+
+//liste des étudiants de chaque promo
+
+
+
 
 module.exports = router;

@@ -5,7 +5,7 @@ const promoController = {
   getPromoList: async (req, res)=> {
 
     try {
-      console.log('controller sucess');
+      // console.log('controller sucess');
       const promoList = await dataMapper.getPromoListRequest();
       // console.log(promoList);
       res.render("promoList", {promoList});
@@ -18,7 +18,24 @@ const promoController = {
 
   },
 
+  getPromo: async (req, res)=>{
+    
+    const promoId = req.params.id;
+    
+    try {
+      console.log('controller sucess');
+      const promo = await dataMapper.getPromoByIdRequest(promoId);
+      console.log(promo);     
 
+      res.render("promoDetails", {promo});
+
+    } catch(error){
+
+      console.log(error);
+      res.render('404.ejs');
+    }
+
+  },
 };
 
 module.exports = promoController;

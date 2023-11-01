@@ -11,6 +11,20 @@ const dataMapper =  {
 
   },
 
+  getPromoByIdRequest: async (promoId)=> {
+
+    const sqlQuery = {
+      text: 'SELECT * FROM promo WHERE id= $1;',
+      values:[promoId],
+    };
+  
+    const result = await client.query(sqlQuery);
+    return result.rows[0];
+  },
+   
+ 
+
+
 
 
 };
