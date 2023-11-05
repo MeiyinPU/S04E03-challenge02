@@ -8,7 +8,9 @@
 
   <% studentList.forEach(student => { %>
    
-  <li><a href="/student/<%= student.id %>"><%= student.first_name %><%= student.last_name %></a>
+  <li>
+    <img src=" <%= student.profile_picture_url %>">
+    <a href="/student/<%= student.id %>"><%= student.first_name %><%= student.last_name %></a>
   </li>
   <% }) %>
 

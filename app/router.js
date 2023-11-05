@@ -17,8 +17,6 @@ const adminController = require("./controllers/adminController.js");
 router.get("/", mainController.getHomePage);
 
 
-
-
 // Liste des promos
 router.get("/promos", promoController.getPromoList);
 
@@ -33,7 +31,13 @@ router.get("/promos/:id/students", studentController.getStudentList);
 //Détails d'un étudiant
 router.get("/student/:id", studentController.getStudent);
 
-module.exports = router;
 
-// admin
-// router.get("/admin/addStudent", adminController.addStudent);
+
+// admin: afficher la fîche
+router.get("/admin/addStudent", adminController.showAddStudentForm);
+
+// envoie du formulaire d'uajout d'un étudiante
+// Quand on clique sur ajouter/submit, on va prendre ce router pour executer la méthode addStudent (méthode du adminController)
+router.post("/admin/addStudent", adminController.addStudent);
+
+module.exports = router;

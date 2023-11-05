@@ -10,6 +10,10 @@ const studentController = {
     try {
       console.log('controller sucess');
       const studentList = await dataMapper.getStudentListRequest(promoId);
+
+     
+
+
       const promo = await dataMapper.getPromoByIdRequest(promoId);
 
       res.render("studentList", {studentList, promo});
@@ -28,7 +32,7 @@ const studentController = {
       console.log('controller sucess');
       const student = await dataMapper.getStudentByIdRequest(studentId);
       const promo = await dataMapper.getPromoByIdRequest(student.promo_id);
-      student.promo_name = promo.name;
+      student.promoName = promo.name;
       res.render("studentDetails", {student});
 
     }catch(error){

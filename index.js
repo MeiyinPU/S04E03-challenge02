@@ -21,16 +21,18 @@ app.set('views', __dirname +'/app/views');
 // config fichier statiques
 app.use(express.static(__dirname + "/public"));
 
-//accès à request.body dans les controllers
+//ajout du body parser pour accès à request.body dans les controllers (faut mettre avant le router)
+app.use(express.urlencoded({extended: true}));
+
 
 
 // branche le MW express-session 
 
 // MW custom àpres "session" et avant "router"
-app.use((req, res, next)=>{
-  res.locals.userName = req.session.connectedUser,
-  next();
-});
+// app.use((req, res, next)=>{
+//   res.locals.userName = req.session.connectedUser;
+//   next();
+// });
 
 // router
 app.use(router);

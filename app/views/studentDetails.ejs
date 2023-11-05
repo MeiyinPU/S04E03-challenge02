@@ -3,7 +3,7 @@
 
 <div class="student">
 <div class="student-avatar">
-<img src="<%= student.profile_picture%>">
+<img src="<%= student.profile_picture_url%>">
 </div>
 
 <div class="student-description">
@@ -12,7 +12,7 @@
 
 <p>promo:
 
-<a href="/promos/<%= student.promo_id %>"><em><%= student.promo_name %></em></a>
+<a href="/promos/<%= student.promo_id %>"><em><%= student.promoName %></em></a>
 </p>
 
 <p>Pseudo Github:

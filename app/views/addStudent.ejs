@@ -1,7 +1,59 @@
 <%- include('partials/header.ejs') %>
 
+<div class="container">
+  <!-- méthode : post : le navigateur va prendre les données du formulaire et les envoyer comme body de la requête POST -->
+  <form action="/admin/addStudent" method="post">
+    <h1>Ajouter un étudiant</h1>
+    <div class="form-group">
 
+    <!-- le for du label et l'id de l'input doivent être les mêmes (mais rien à voir avec la soumission du formulaire, c'est juste pour la UI) -->
 
+      <label for="promo">Promotion :</label>
+
+      <select name="promo" id="promo">
+        <option disabled selected>--Veuillez sélectionner une promo--</option>
+        <!-- on boucle sur la liste des promos pour remplir le select avec les noms des promos -->
+        
+        <% promoList.forEach(promo => { %>
+
+        <!-- identifiant unique pour envoyer la valeur du champs pour remplir le 'payload' du formulaire lorsqu'on clique sur 'Ajouter' -->
+          <option value="<%= promo.id %>"><%= promo.name %></option>
+        <% }) %>
+        
+ 
+        <%# for( const promo of promoList ) { %>
+          <!-- <option value="<%# promo.id %>"><%# promo.name %></option> -->
+        <%# } %>
+
+     
+      </select>
+
+    </div>
+ <!-- attribut name est utilisé par le navigatuer pour nommer la valeur du champ pour le 'payload' du formulaire lorsqu'on clique sur Ajouter -->
+    <div class="form-group">
+      <!-- le "for" du label et l'"id" de l'input doivent être les mêmes (mais rien à voir avec la soumission du formulaire, c'est juste pour la UI) -->
+      <label for="first_name">Prénom :</label>
+      <!-- atribut "name" : est utilisé par le navigateur pour nommer la valeur du champ dans le "payload" du formulaire lorsqu'on clique sur "Ajouter" -->
+      <input type="text" name="first_name" id="first_name" placeholder="Prénom">
+    </div>
+
+    <div class="form-group">
+      <label for="last_name">Nom :</label>
+      <input type="text" name="last_name" id="last_name" placeholder="Nom">
+    </div>
+
+    <div class="form-group">
+      <label for="github_username">Pseudo Github :</label>
+      <input type="text" name="github_username" id="github_username" placeholder="Pseudo Github">
+    </div>
+
+    <div class="form-group">
+      <!-- input type submit : le navigateur sait que quand on clique sur ce bouton, c'est là qu'il faut envoyer une requête POST, avec les données du formulaire dans le body -->
+      <input type="submit" value="Ajouter" class="button button-green">
+    </div>
+
+  </form>
+</div>
 
 
 
