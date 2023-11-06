@@ -5,22 +5,22 @@ const adminController = {
   showAddStudentForm: async (req,res)=> {
     console.log('adminController success');
     // Methode qui affiche la page contenant le formaulaire d'ajout d'un étudiant
-    // if (req.session.connectedUser !== "Nicole"){
-    //   return res.status(403).send('Accès non autorisé');
-    // } else {
+    if (req.session.connectedUser !== "Nicole"){
+      return res.status(403).send('Accès non autorisé');
+    } else {
 
-    try{
-    // requête SQL pour demander la liste des promotions
-      const promoList = await dataMapper.getPromoListRequest();
-      res.render("addStudent.ejs", {promoList} );
+      try{
+        // requête SQL pour demander la liste des promotions
+        const promoList = await dataMapper.getPromoListRequest();
+        res.render("addStudent.ejs", {promoList} );
 
-    } catch(error){
-      console.log(error);
-      res.render('404.ejs');
+      } catch(error){
+        console.log(error);
+        res.render('404.ejs');
+
+      }
 
     }
-    // }
-
   },
 
   addStudent: async (req, res)=> {

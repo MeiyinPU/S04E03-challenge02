@@ -35,12 +35,13 @@ app.use(session({
 
 }));
 
-
-// MW custom àpres "session" et avant "router"
-// app.use((req, res, next)=>{
-//   res.locals.userName = req.session.connectedUser;
-//   next();
-// });
+// MW  pour ajouter l'utilsiateur connecté dans tous les vues, àpres "session" et avant "router"
+// Ce MW est dans l'index.js, donc il est appellé pour toutes les requêtes
+// l'objet res.locals est accessibles dans toute les vues
+app.use((req, res, next)=>{
+  res.locals.userName = req.session.connectedUser;
+  next();
+});
 
 // router
 app.use(router);

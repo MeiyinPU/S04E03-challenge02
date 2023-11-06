@@ -23,7 +23,7 @@
                 <li><a class="button button--menu" href="/login">Login</a></li>
 
                  <% if (locals.userName) { %>
-                    <li><% locals.userName %></li>
+                    <li><a class="button button--menu" href="#"><%= locals.userName %></a></li>
                 <% } %> 
             </ul>
         </nav>

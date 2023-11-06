@@ -21,10 +21,9 @@ const authController = {
     req.session.connectedUser = user;
     // l'objet request.session on l'organise comme on veut: c'est un simple objet auquel on peut ajouter autant de propiretés qu'on le souhaite
     // là j'y ai rangé mon nom d'utilisateur. l'intérêt c'est qu'il persiste peut importe sur quelle page je me trouve
-
-
+ 
     // ! 3) rediriger l'utilisateur sur la page d'accueil
-     
+    res.redirect("/");
   },
 
 };
