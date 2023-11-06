@@ -5,7 +5,7 @@ const promoController = {
   getPromoList: async (req, res)=> {
 
     try {
-      // console.log('controller sucess');
+      // console.log('promoController sucess');
       const promoList = await dataMapper.getPromoListRequest();
       // console.log(promoList);
       res.render("promoList", {promoList});
@@ -23,7 +23,7 @@ const promoController = {
     const promoId = req.params.id;
     
     try {
-      console.log('controller sucess');
+      console.log('promoController sucess');
       const promo = await dataMapper.getPromoByIdRequest(promoId);
       console.log(promo);     
 

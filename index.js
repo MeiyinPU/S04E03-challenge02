@@ -6,6 +6,7 @@ const express = require("express");
 
 
 // reuquire le module express-session
+const session = require("express-session");
 
 // require router
 const router = require("./app/router.js");
@@ -25,8 +26,15 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({extended: true}));
 
 
+// branche le MW express-session qui s'oocupe de gérer pour nous le système des sessions et des cookies
+app.use(session({
+  secret: 'une chaine de charactère aléatoire', // le "secret" qui sert à générer les identifiants de sessions uniques
+  resave: true, // sauvegarde automatiquement de la session à la fin de la requête 
+  saveUninitialized: true,  // créer une session pour l'internaute dans tous les cas. if false: on crée une session que une fois qu'on met quelques choses dedans
+  cookie: {secure: false}  // if https: true http: false
 
-// branche le MW express-session 
+}));
+
 
 // MW custom àpres "session" et avant "router"
 // app.use((req, res, next)=>{

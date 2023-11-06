@@ -1,9 +1,13 @@
 <%- include('partials/header.ejs') %>
 
 
+<form class="form-signin" action="/login" method="POST">
+  <h1>Formulaire de connexion</h1>
+  <label for="login">Votre login</label>
+  <input type="text" id="login" name="login" placeholder="ex: Toto" required autofocus>
+  <button class= "button button--blue" type="submit">Connexion</button>
 
-
-
+</form>
 
 
 <%- include('partials/footer.ejs') %>

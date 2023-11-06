@@ -5,6 +5,7 @@ const promoController = require("./controllers/promoController.js");
 const studentController = require("./controllers/studentController.js");
 const mainController = require("./controllers/mainController.js");
 const adminController = require("./controllers/adminController.js");
+const authController = require("./controllers/authController.js");
 
 //pour tester
 // router.get("/", (req, res)=>{
@@ -39,5 +40,13 @@ router.get("/admin/addStudent", adminController.showAddStudentForm);
 // envoie du formulaire d'uajout d'un étudiante
 // Quand on clique sur ajouter/submit, on va prendre ce router pour executer la méthode addStudent (méthode du adminController)
 router.post("/admin/addStudent", adminController.addStudent);
+
+
+// login
+router.get('/login', authController.showLoginForm);
+
+// envoie du formulaire 
+router.post('/login', authController.postLogin);
+
 
 module.exports = router;
